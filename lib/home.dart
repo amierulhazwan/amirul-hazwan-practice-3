@@ -12,11 +12,6 @@ class Home extends StatelessWidget {
           backgroundColor: Colors.amber[900],
           elevation: 5.0,
           leading: Center(
-            // child: const Text(
-            //   "Log out",
-            //   style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-            // ),
-
             child: IconButton(
               icon: const Icon(
                 Icons.logout_outlined,

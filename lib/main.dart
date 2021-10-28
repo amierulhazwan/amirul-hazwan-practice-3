@@ -143,7 +143,6 @@ class SnackBarPage extends StatelessWidget {
               },
             ),
           );
-
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         child: const Text('Sign Up'),
