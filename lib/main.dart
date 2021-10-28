@@ -1,14 +1,23 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
-import './home.dart';
+import 'home.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   final nameController = TextEditingController();
+
   final emailController = TextEditingController();
+
   final pswdController = TextEditingController();
 
-  final _value = 1;
+  int _value = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -92,12 +101,11 @@ class MyApp extends StatelessWidget {
                 value: 4,
               ),
             ],
-
-            // onChanged: (int? value) {
-            //   setState(() {
-            //     _value = value!;
-            //   });
-            // },
+            onChanged: (int? value) {
+              setState(() {
+                _value = value!;
+              });
+            },
           ),
         ),
         Container(
@@ -111,7 +119,7 @@ class MyApp extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => home()),
+                  MaterialPageRoute(builder: (context) => Home()),
                 );
                 print(nameController.text);
                 print(emailController.text);
