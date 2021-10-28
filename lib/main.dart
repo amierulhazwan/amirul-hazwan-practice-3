@@ -12,12 +12,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final nameController = TextEditingController();
-
   final emailController = TextEditingController();
-
   final pswdController = TextEditingController();
 
-  int _value = 1;
+  int _value = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +83,10 @@ class _MyAppState extends State<MyApp> {
             value: _value,
             items: const [
               DropdownMenuItem(
+                child: Text("Choose Gender"),
+                value: 0,
+              ),
+              DropdownMenuItem(
                 child: Text("Male"),
                 value: 1,
               ),
@@ -109,25 +111,54 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         Container(
-            height: 50,
-            padding: const EdgeInsets.all(10),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.amber[900],
-              ),
-              child: const Text('Sign Up'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-                print(nameController.text);
-                print(emailController.text);
-                print(pswdController.text);
-              },
-            )),
+          height: 60,
+          padding: const EdgeInsets.all(10),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.amber[900],
+            ),
+            child: const Text('Sign Up'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
+              );
+            },
+          ),
+        ),
+        Container(
+          child: const SnackBarPage(),
+        )
       ] //Text
           ), //Scaffold
     ));
+  }
+}
+
+class SnackBarPage extends StatelessWidget {
+  const SnackBarPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: const Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              label: 'Undo',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
+
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+        child: const Text('Show SnackBar'),
+      ),
+    );
   }
 }
