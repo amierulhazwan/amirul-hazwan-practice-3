@@ -144,7 +144,7 @@ class SnackBarPage extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           final snackBar = SnackBar(
-            content: const Text('Yay! A SnackBar!'),
+            content: const Text('You have succesfully logged in'),
             action: SnackBarAction(
               label: 'Undo',
               onPressed: () {
@@ -152,12 +152,16 @@ class SnackBarPage extends StatelessWidget {
               },
             ),
           );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Home()),
+          );
 
           // Find the ScaffoldMessenger in the widget tree
           // and use it to show a SnackBar.
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
-        child: const Text('Show SnackBar'),
+        child: const Text('Sign Up'),
       ),
     );
   }
