@@ -113,20 +113,6 @@ class _MyAppState extends State<MyApp> {
         Container(
           height: 60,
           padding: const EdgeInsets.all(10),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.amber[900],
-            ),
-            child: const Text('Sign Up'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
-            },
-          ),
-        ),
-        Container(
           child: const SnackBarPage(),
         )
       ] //Text
@@ -142,23 +128,22 @@ class SnackBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
+        style: ElevatedButton.styleFrom(primary: Colors.amber[900]),
         onPressed: () {
           final snackBar = SnackBar(
             content: const Text('You have succesfully logged in'),
             action: SnackBarAction(
-              label: 'Undo',
+              label: 'Close',
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
                 // Some code to undo the change.
               },
             ),
           );
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Home()),
-          );
 
-          // Find the ScaffoldMessenger in the widget tree
-          // and use it to show a SnackBar.
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         child: const Text('Sign Up'),
