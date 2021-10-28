@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/amirul/Documents/BeSquare/4_251021MobileDevelopment/amirul-hazwan-practice-3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/amirul/Documents/BeSquare/4_251021MobileDevelopment/md_besquare_day3/amirul-hazwan-practice-3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/amirul/Documents/BeSquare/4_251021MobileDevelopment/amirul-hazwan-practice-3/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/amirul/Documents/BeSquare/4_251021MobileDevelopment/md_besquare_day3/amirul-hazwan-practice-3/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
