@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './home.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,19 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: const Text("Hello Deriv"),
-        backgroundColor: Colors.amber[900],
-        elevation: 50.0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          tooltip: 'Menu Icon',
-          onPressed: () {},
-        ), //IconButton
-      ), //AppBar
       body: ListView(children: <Widget>[
         Center(
           child: Container(
+            margin: const EdgeInsets.only(bottom: 10),
             padding: const EdgeInsets.only(top: 35),
             child: const Text(
               "Welcome to BeSquare",
@@ -74,10 +66,12 @@ class MyApp extends StatelessWidget {
           ),
         ),
         Container(
-          // height: 60,
+          height: 60,
+          margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(10)),
+              // color: Colors.black,
+              borderRadius: BorderRadius.circular(10)),
           child: DropdownButton(
             value: _value,
             items: const [
@@ -115,6 +109,10 @@ class MyApp extends StatelessWidget {
               ),
               child: const Text('Sign Up'),
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => home()),
+                );
                 print(nameController.text);
                 print(emailController.text);
                 print(pswdController.text);
